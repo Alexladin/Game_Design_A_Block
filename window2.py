@@ -3,19 +3,19 @@
 
 import pygame as py, os, random, time
 py.init()
-BLACK=(255,255,255)
+BLACK=(153,255,255)
 WHITE=(0,0,0)
-BLUE=(0,255,0)
+PURPLE=(255,204,255)
 WIDTH = 800
 HEIGHT = 800
 messages=['Instructions','Level 1','Level 2','Settings','Score Board', 'Exit']
 messages2=['Screen size', 'Object Color', 'Sound on/off', 'Back']
-Ssmessages=['Bigger', 'Smaller']
+Ssmessages=['Larger', 'Smaller', 'Back']
 win=py.display.set_mode((WIDTH,HEIGHT))
 py.display.set_caption("Setting Window")
 #TITLE_FONT= py.font.SysFont(name,size,bold=false, italic= false)
-TITLE_FONT= py.font.SysFont('times new roman', 50, italic=True)
-SUBTITLE_FONT= py.font.SysFont('times new roman', 30, italic=True)
+TITLE_FONT= py.font.SysFont('Times new roman', 70, italic=True)
+SUBTITLE_FONT= py.font.SysFont('Times new roman', 50, italic=True)
 xbox=25
 wbox=25
 square=py.Rect(10,10, wbox, xbox)
@@ -42,7 +42,7 @@ def display_Menu():
     square.y=y
     for i in range(0, len(messages)):
         word= messages[i]
-        py.draw.rect(win, BLUE, square)
+        py.draw.rect(win, PURPLE, square)
         text=SUBTITLE_FONT.render(word,10, BLACK)
         win.blit(text, (x+wbox+10, y))
         py.display.flip()
@@ -57,26 +57,31 @@ ysub=200
 py.time.delay(200)
 display_Menu()
 run=True
+
 while run:
     for eve in py.event.get():
         if eve.type == py.QUIT:
             run=False
+
     if eve.type==py.MOUSEBUTTONDOWN:
         mouse_pressed=py.mouse.get_pressed()
         if mouse_pressed[0]:
             mouse_pos=py.mouse.get_pos()
-            if mouse_pos[0]>=80 and mouse_pos[0]<=500:
+            print(mouse_pos)
+            if mouse_pos[0]>=70 and mouse_pos[0]<=95 and mouse_pos[1]>490 and mouse_pos[1]<515:
                 win.fill(WHITE)
                 display_message("Settings")
                 py.display.set_caption("Setting Window")
                 mouse_pos=py.mouse.get_pos()
+                #if mouse_pos==true:
+
                 x=70
                 y=190
                 square.x=x
                 square.y=y
                 for i in range(0, len(messages2)):
                     word= messages2[i]
-                    py.draw.rect(win, BLUE, square)
+                    py.draw.rect(win, PURPLE, square)
                     text=SUBTITLE_FONT.render(word,10, BLACK)
                     win.blit(text, (x+wbox+10, y))
                     py.display.flip()
@@ -84,7 +89,7 @@ while run:
                     y += 100
                     square.y=y
             
-            if mouse_pos[1]>80 and mouse_pos[1]<=200:
+            if mouse_pos[0]>70 and mouse_pos[0]<=95 and mouse_pos[1]>185 and mouse_pos[1]<=215:
                 win.fill(WHITE)
                 display_message('Screen Size')
                 py.display.set_caption("Screen Size Window")
@@ -94,12 +99,10 @@ while run:
                 square.y=y
                 for i in range(0, len(Ssmessages)):
                     word= Ssmessages[i]
-                    py.draw.rect(win, BLUE, square)
+                    py.draw.rect(win, PURPLE, square)
                     text=SUBTITLE_FONT.render(word,10, BLACK)
                     win.blit(text, (x+wbox+10, y))
                     py.display.flip()
                     py.time.delay(100)
                     y += 100
                     square.y=y
-
-py.quit()

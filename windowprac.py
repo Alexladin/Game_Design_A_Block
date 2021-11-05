@@ -3,22 +3,23 @@
 #11/1/21
 
 import pygame as py, os, random, time
+
+from pygame import event
 py.init()
-BLACK=(178,255,102)
-WHITE=(204,0,204)
-PURPLE=(204,153,205)
+BLACK=(0,0,204)
+WHITE=(153,205,204)
+PURPLE=(255,51,153)
 WIDTH = 800
 HEIGHT = 800
 bmessages=["Back"]
 messages=['Instructions','Level 1','Level 2','Settings','Score Board', 'Exit']
 messages2=['Screen size', 'Object Color', 'Sound on/off', ]
 Ssmessages=['Larger', 'Smaller', ]
-imessages=["In order to win you need to make the circle eat the square"]
+imessages=["To win make the circle eat the square"]
 win=py.display.set_mode((WIDTH,HEIGHT))
 py.display.set_caption("Setting Window")
-#TITLE_FONT= py.font.SysFont(name,size,bold=false, italic= false)
-TITLE_FONT= py.font.SysFont('times new roman', 70, )
-SUBTITLE_FONT= py.font.SysFont('times new roman', 50, )
+TITLE_FONT= py.font.SysFont('mouse deco', 80, )
+SUBTITLE_FONT= py.font.SysFont('mouse deco', 50, )
 xbox=25
 wbox=25
 square=py.Rect(10,10, wbox, xbox)
@@ -52,12 +53,13 @@ def display_back():
                     
                     square.y=y
 
-
+counter=1
 def display_Menu():
     x=70
     y=190
     square.x=x
     square.y=y
+    counter=1
     for i in range(0, len(messages)):
         word= messages[i]
         py.draw.rect(win, PURPLE, square)
@@ -74,15 +76,15 @@ display_message('Menu')
 ysub=200
 py.time.delay(200)
 display_Menu()
-display_back()
+
 run=True
 counter=1
 back=1
 while run:
     
     for eve in py.event.get():
-        if eve.type == py.QUIT:
-            run=False
+       if eve.type == py.QUIT:
+           run=False
 
     if eve.type==py.MOUSEBUTTONDOWN:
         mouse_pressed=py.mouse.get_pressed()
@@ -94,7 +96,7 @@ while run:
                 display_message("Settings")
                 py.display.set_caption("Setting Window")
                 mouse_pos=py.mouse.get_pos()
-                counter +=1
+                counter +=2
                 
                 x=70
                 y=190
@@ -109,13 +111,13 @@ while run:
                     py.time.delay(100)
                     y += 100
                     square.y=y
-
+                back+=1
                 x=660
                 y=730
                 square.x=x
                 square.y=y
-                for i in range(0, len(back)):
-                    word= back[i]
+                for i in range(0,len(bmessages)):
+                    word= bmessages[i]
                     py.draw.rect(win, PURPLE, square)
                     text=SUBTITLE_FONT.render(word,10, BLACK)
                     win.blit(text, (x+wbox+10, y))
@@ -127,7 +129,6 @@ while run:
             if mouse_pos[0]>70 and mouse_pos[0]<=95 and mouse_pos[1]>185 and mouse_pos[1]<=215 and counter==1:
                 win.fill(WHITE)
                 display_message('Instructions')
-                display_message('this is our game', HEIGHT-100)
                 py.display.set_caption("instructions window")
                 x=70
                 y=190
@@ -143,9 +144,25 @@ while run:
                     py.time.delay(100)
                     y += 100
                     square.y=y
+                
+                back+=1
+                counter+=1
+                x=660
+                y=730
+                square.x=x
+                square.y=y
+                for i in range(0,len(bmessages)):
+                    word= bmessages[i]
+                    py.draw.rect(win, PURPLE, square)
+                    text=SUBTITLE_FONT.render(word,10, BLACK)
+                    win.blit(text, (x+wbox+10, y))
+                    py.display.flip()
+                    
+                    
+                    square.y=y
+
             
-            
-            if mouse_pos[0]>70 and mouse_pos[0]<=95 and mouse_pos[1]>185 and mouse_pos[1]<=215 and counter==2:
+            if mouse_pos[0]>70 and mouse_pos[0]<=95 and mouse_pos[1]>185 and mouse_pos[1]<=215 and counter==3:
                 win.fill(WHITE)
                 display_message('Screen Size')
                 py.display.set_caption("Screen Size Window")
@@ -162,7 +179,83 @@ while run:
                     py.time.delay(100)
                     y += 100
                     square.y=y
+                display_back()
+                counter+=1
+                back+=1
 
+
+            if mouse_pos[0]>660 and mouse_pos[0]<=685 and mouse_pos[1]>730 and mouse_pos[1]<=755 and back==2:
+                win.fill(WHITE)
+                display_message('Menu')
+                counter-=2
+                back-=1
+                display_Menu()
+
+
+
+
+            if mouse_pos[0]>660 and mouse_pos[0]<=685 and mouse_pos[1]>730 and mouse_pos[1]<=755 and back==3:
+                win.fill(WHITE)
+                
+                counter-=1
+                back-=1
+                win.fill(WHITE)
+                display_message("Settings")
+                py.display.set_caption("Setting Window")
+                mouse_pos=py.mouse.get_pos()
+                counter +=2
+                back-=1
+                x=70
+                y=190
+                square.x=x
+                square.y=y
+                for i in range(0, len(messages2)):
+                    word= messages2[i]
+                    py.draw.rect(win, PURPLE, square)
+                    text=SUBTITLE_FONT.render(word,10, BLACK)
+                    win.blit(text, (x+wbox+10, y))
+                    py.display.flip()
+                    py.time.delay(100)
+                    y += 100
+                    square.y=y
+                back+=1
+                x=660
+                y=730
+                square.x=x
+                square.y=y
+                for i in range(0,len(bmessages)):
+                    word= bmessages[i]
+                    py.draw.rect(win, PURPLE, square)
+                    text=SUBTITLE_FONT.render(word,10, BLACK)
+                    win.blit(text, (x+wbox+10, y))
+                    py.display.flip()
+                    
+                    
+                    square.y=y    
+                
+            if mouse_pos[0]>70 and mouse_pos[0]<=95 and mouse_pos[1]>190 and mouse_pos[1]<=215 and counter==4:
+                WIDTH+=50
+                HEIGHT+=50
+                win=py.display.set_mode((WIDTH,HEIGHT))   
+                display_back
+            if mouse_pos[0]>70 and mouse_pos[0]<=95 and mouse_pos[1]>290 and mouse_pos[1]<315 and counter==4:
+                WIDTH-=50
+                HEIGHT-=50
+                win=py.display.set_mode((WIDTH,HEIGHT))   
+                display_back
+            
+            if mouse_pos[0]>70 and mouse_pos[0]<=95 and mouse_pos[1]>81 and mouse_pos[1]<=700:
+                py.quit()
+          
+                    
+                            
+                                
+            print(WIDTH)
+            print(counter)
+            print(back)
+
+            
+                
             
               
                     

@@ -1,3 +1,9 @@
+#Alex Ladin 
+#11/4/21
+#this is for game design 
+
+
+
 import pygame as py, os, random, time
 py.init()
 BLACK=(0,0,204)

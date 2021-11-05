@@ -1,3 +1,7 @@
+#Alex Ladin
+#This is for game design 
+#11/4/21
+
 import pygame as py, os, random, time
 py.init()
 BLACK=(0,0,204)
@@ -238,8 +242,6 @@ while run:
                 win=py.display.set_mode((WIDTH,HEIGHT))   
                 display_back
             
-            if mouse_pos[0]>70 and mouse_pos[0]<=95 and mouse_pos[1]>81 and mouse_pos[1]<=700:
-                py.quit()
           
                     
                             

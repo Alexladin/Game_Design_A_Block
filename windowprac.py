@@ -1,10 +1,8 @@
 #Alex Ladin
-#learning how to use windows and make a menu 
-#11/1/21
+#This is for game design 
+#11/4/21
 
 import pygame as py, os, random, time
-
-from pygame import event
 py.init()
 BLACK=(0,0,204)
 WHITE=(153,205,204)
@@ -83,8 +81,8 @@ back=1
 while run:
     
     for eve in py.event.get():
-       if eve.type == py.QUIT:
-           run=False
+        if eve.type == py.QUIT:
+            run=False
 
     if eve.type==py.MOUSEBUTTONDOWN:
         mouse_pressed=py.mouse.get_pressed()
@@ -244,30 +242,11 @@ while run:
                 win=py.display.set_mode((WIDTH,HEIGHT))   
                 display_back
             
-            if mouse_pos[0]>70 and mouse_pos[0]<=95 and mouse_pos[1]>81 and mouse_pos[1]<=700:
-                py.quit()
           
                     
                             
                                 
             print(WIDTH)
-            print(counter)
-            print(back)
-
-            
-                
-            
-              
-                    
-                            
-                
-        
-               
-          
-                    
-                            
-                                
-
             print(counter)
             print(back)
 

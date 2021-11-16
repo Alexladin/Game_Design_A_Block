@@ -38,7 +38,7 @@ boldX=width-300
 boldY=height-200
 
 screen.fill(green)
-py.display.set_caption("Boulder game")
+py.display.set_caption("Alex's Window")
 
 boulder=py.Rect(boldX,boldY,100,200)
 rect = py.Rect(x, y, hbox, wbox)
@@ -79,8 +79,13 @@ while run:
             Jump=False
 
             #Setting Boundaries
+        
+
+
         if rect.y > height - hbox : rect.y = height - hbox
         if guyy > height - hbox : guyy = height - hbox
+
+
      
     screen.blit(bg,(0,0))
     screen.blit(guy, (guyx, guyy))

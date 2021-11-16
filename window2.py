@@ -1,23 +1,23 @@
 #Alex Ladin
-#10/27/21
+#This is for game design 
+#11/4/21
 
 import pygame as py, os, random, time
 py.init()
-BLACK=(255,255,255)
-WHITE=(0,0,0)
-PURPLE=(150,0,150)
+BLACK=(0,0,204)
+WHITE=(153,205,204)
+PURPLE=(255,51,153)
 WIDTH = 800
 HEIGHT = 800
 bmessages=["Back"]
 messages=['Instructions','Level 1','Level 2','Settings','Score Board', 'Exit']
 messages2=['Screen size', 'Object Color', 'Sound on/off', ]
 Ssmessages=['Larger', 'Smaller', ]
-imessages=["do this to win"]
+imessages=["To win make the circle eat the square"]
 win=py.display.set_mode((WIDTH,HEIGHT))
 py.display.set_caption("Setting Window")
-#TITLE_FONT= py.font.SysFont(name,size,bold=false, italic= false)
-TITLE_FONT= py.font.SysFont('comicsans', 50, italic=True)
-SUBTITLE_FONT= py.font.SysFont('comicsans', 30, italic=True)
+TITLE_FONT= py.font.SysFont('mouse deco', 80, )
+SUBTITLE_FONT= py.font.SysFont('mouse deco', 50, )
 xbox=25
 wbox=25
 square=py.Rect(10,10, wbox, xbox)
@@ -242,7 +242,6 @@ while run:
                 win=py.display.set_mode((WIDTH,HEIGHT))   
                 display_back
             
-               
           
                     
                             
@@ -250,7 +249,6 @@ while run:
             print(WIDTH)
             print(counter)
             print(back)
-
 
             
 

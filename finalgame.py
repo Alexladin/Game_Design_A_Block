@@ -12,9 +12,13 @@ ICON = pygame.image.load(os.path.join("Images\\Pygame-Tutorials-master\Game\Scre
 pygame.display.set_icon(ICON)
 pygame.display.set_caption("Memory")
 DISPLAY = pygame.display.set_mode(SCREEN)
-Images= [pygame.image.load("Images\\Pygame-Tutorials-master\Game\\apple .png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\apple .png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\banana.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\banana.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\cherry.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\cherry.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\grape.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\grape.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\lemon.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\lemon.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\orange.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\orange.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\pear.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\pear.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\pineapple.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\pineapple.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\strawberry.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\strawberry.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\watermelon.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\watermelon.png")
+Images= [pygame.image.load("Images\\Pygame-Tutorials-master\Game\\apple .png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\apple .png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\banana.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\banana.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\cherry.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\cherry.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\grape.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\grape.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\lemon.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\lemon.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\orange.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\orange.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\pear.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\pear.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\pineapple.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\pineapple.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\strawberry.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\strawberry.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\watermelon.png"), pygame.image.load("Images\Pygame-Tutorials-master\Game\\watermelon.png")]
+shuffleimages=random.shuffle(Images)
+#put the double array here? 
+images=len(shuffleimages)
+print(images)
 
-
+    
 
 #i think i need to add a list here with all of my new images 
 #i also need to find out where in this code they are putting the numbers 
@@ -35,23 +39,30 @@ CARD_HOR_PAD = 37
 CARD_VER_PAD = 22
 ROWS = 4
 COLS = 5
-cards = [i for i in range(10) for j in range(2)]
-random.shuffle(cards)
-CARD_VAL_GRID = [cards[i*len(cards) // ROWS:(i+1)*len(cards) // ROWS] for i in range(ROWS)]
-CARD_GRID = [[] for i in range(ROWS)]
-for i in range(ROWS):
-    if i == 0:
-        for j in range(COLS):
-            if j == 0:
-                CARD_GRID[i].append(pygame.Rect(CARD_MARGIN, CARD_MARGIN, CARD_LEN, CARD_LEN))
-            else:
-                CARD_GRID[i].append(pygame.Rect(CARD_GRID[i][j-1].x + CARD_LEN + CARD_MARGIN, CARD_MARGIN, CARD_LEN, CARD_LEN))
-    else:
-        for j in range(COLS):
-            if j == 0:
-                CARD_GRID[i].append(pygame.Rect(CARD_MARGIN, CARD_GRID[i-1][0].y + CARD_LEN + CARD_MARGIN, CARD_LEN, CARD_LEN))
-            else:
-                CARD_GRID[i].append(pygame.Rect(CARD_GRID[i][j-1].x + CARD_LEN + CARD_MARGIN, CARD_GRID[i-1][0].y + CARD_LEN + CARD_MARGIN, CARD_LEN, CARD_LEN))
+#cards = [i for i in range(10) for j in range(2)]
+#random.shuffle(cards)
+for i in range(images):
+    for j in range (ROWS):
+        for k in range (COLS):
+            gridarray [j] [k]=shuffleimages[i] 
+            #i need to blit here
+            
+#double array?
+# CARD_VAL_GRID = [cards[i*len(cards) // ROWS:(i+1)*len(cards) // ROWS] for i in range(ROWS)]
+# CARD_GRID = [[] for i in range(ROWS)]
+# for i in range(ROWS):
+#     if i == 0:
+#         for j in range(COLS):
+#             if j == 0:
+#                 CARD_GRID[i].append(pygame.Rect(CARD_MARGIN, CARD_MARGIN, CARD_LEN, CARD_LEN))
+#             else:
+#                 CARD_GRID[i].append(pygame.Rect(CARD_GRID[i][j-1].x + CARD_LEN + CARD_MARGIN, CARD_MARGIN, CARD_LEN, CARD_LEN))
+#     else:
+#         for j in range(COLS):
+#             if j == 0:
+#                 CARD_GRID[i].append(pygame.Rect(CARD_MARGIN, CARD_GRID[i-1][0].y + CARD_LEN + CARD_MARGIN, CARD_LEN, CARD_LEN))
+#             else:
+#                 CARD_GRID[i].append(pygame.Rect(CARD_GRID[i][j-1].x + CARD_LEN + CARD_MARGIN, CARD_GRID[i-1][0].y + CARD_LEN + CARD_MARGIN, CARD_LEN, CARD_LEN))
 global exposed
 exposed = []
 global matched
@@ -108,23 +119,23 @@ while True:
             pygame.draw.rect(DISPLAY, (255, 255, 255), CARD_GRID[i][j])
             
     #Draw numbers
-    # if exposed:
-    #     for i in exposed:
-    #         text = str(CARD_VAL_GRID[i[0]][i[1]])
-    #         render = ARIAL_50.render(text, True, BLACK)
-    #         DISPLAY.blit(render, (CARD_GRID[i[0]][i[1]].x + CARD_HOR_PAD, CARD_GRID[i[0]][i[1]].y + CARD_VER_PAD))
+    if exposed:
+        for i in exposed:
+            text = str(CARD_VAL_GRID[i[0]][i[1]])
+            render = ARIAL_50.render(text, True, BLACK)
+            DISPLAY.blit(render, (CARD_GRID[i[0]][i[1]].x + CARD_HOR_PAD, CARD_GRID[i[0]][i[1]].y + CARD_VER_PAD))
 
-    # if matched:
-    #     for i in matched:
-    #         text = str(CARD_VAL_GRID[i[0]][i[1]])
-    #         render = ARIAL_50.render(text, True, GREEN)
-    #         DISPLAY.blit(render, (CARD_GRID[i[0]][i[1]].x + CARD_HOR_PAD, CARD_GRID[i[0]][i[1]].y + CARD_VER_PAD))
+    if matched:
+        for i in matched:
+            text = str(CARD_VAL_GRID[i[0]][i[1]])
+            render = ARIAL_50.render(text, True, GREEN)
+            DISPLAY.blit(render, (CARD_GRID[i[0]][i[1]].x + CARD_HOR_PAD, CARD_GRID[i[0]][i[1]].y + CARD_VER_PAD))
 
-    # if wrong:
-    #     for i in wrong:
-    #         text = str(CARD_VAL_GRID[i[0]][i[1]])
-    #         render = ARIAL_50.render(text, True, RED)
-    #         DISPLAY.blit(render, (CARD_GRID[i[0]][i[1]].x + CARD_HOR_PAD, CARD_GRID[i[0]][i[1]].y + CARD_VER_PAD))
+    if wrong:
+        for i in wrong:
+            text = str(CARD_VAL_GRID[i[0]][i[1]])
+            render = ARIAL_50.render(text, True, RED)
+            DISPLAY.blit(render, (CARD_GRID[i[0]][i[1]].x + CARD_HOR_PAD, CARD_GRID[i[0]][i[1]].y + CARD_VER_PAD))
 
     #Draw other stuff
     title = ARIAL_35.render("Memory", True, WHITE)

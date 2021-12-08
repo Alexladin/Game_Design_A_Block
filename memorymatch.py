@@ -22,6 +22,7 @@ shuffleimages=random.shuffle(Images)
 images=len(Images)
 #print(images)
 Cards=[0,0]
+print(Cards)
 
 #i think i need to add a list here with all of my new images 
 #i also need to find out where in this code they are putting the numbers 
@@ -43,6 +44,8 @@ CARD_VER_PAD = 22
 ROWS = 4
 COLS = 5
 DEFAULT_IMAGE_SIZE=(100,100)
+xm=0
+ym=0
 #cards = [i for i in range(10) for j in range(2)]
 #random.shuffle(cards)
 screen.fill(GREEN)
@@ -58,15 +61,16 @@ screen.fill(GREEN)
 #             x+=120
 #             counter+=1
 #         y+=120
-y=10
-for j in range (ROWS):
-    x=10
-    for k in range (COLS):
-        rect=pygame.Rect(x,y , 100, 100 )
-        pygame.draw.rect(screen, BLACK, rect)    
-        x+=120
-        pygame.display.flip()
-    y+=120
+for i in range(images):
+    y=10
+    for j in range (ROWS):
+        x=10
+        for k in range (COLS):
+            rect=pygame.Rect(x,y , 100, 100 )
+            pygame.draw.rect(screen, BLACK, rect)    
+            x+=120
+            pygame.display.flip()
+        y+=120
 
 y=10
 for j in range (ROWS):
@@ -79,19 +83,9 @@ for j in range (ROWS):
 
     y+=120
 
-
-    
-
-
-
-
-
 pygame.display.flip()
 rect=pygame.Rect(10, 10, 100, 100 )
 pygame.draw.rect(screen, BLACK, rect)
-
-
-
 
 #for j in range (ROWS):
     #pygame.draw.rect(x,y)
@@ -99,53 +93,57 @@ pygame.draw.rect(screen, BLACK, rect)
 Card1=True
 Card2=True
 
+run=True
 
-
-while True:
+while run:
     for event in pygame.event.get():
         #Detect quit
         if event.type == pygame.QUIT:
-            pygame.quit()
-    if event.type==pygame.MOUSEBUTTONDOWN:
-        mouse_pressed = pygame.mouse.get_pressed()
-        if mouse_pressed[0]:
-            mouse_pos =pygame.mouse.get_pos()
-            print(pygame.mouse.get_pos())
-            xm=mouse_pos[0]
-            ym=mouse_pos[1]
+            run=False
+        if event.type==pygame.MOUSEBUTTONDOWN:
+            mouse_pressed = pygame.mouse.get_pressed()
+            if mouse_pressed[0]:
+                mouse_pos =pygame.mouse.get_pos()
+                # print(pygame.mouse.get_pos())
+                xm=mouse_pos[0]
+                ym=mouse_pos[1]
 
         if xm >14 and xm<100 and ym>14 and ym<100:
-            print(Card1)
-            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+            
+        #collide = pygame.Rect.collidepoint(rect,(xm,ym))
         #collide function
             if Card1:
+                print("Card 1")
                 Cards[0]=0
                 Card1=False
+                print(Cards)
             elif Card2:
                 Cards[1]=0
                 Card2=False
-
+            
         if xm >135 and xm<220 and ym>14 and ym<100:
-            print(xm,ym)
-            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+            # print("card2")
+          
         #collide function
             if Card1:
                 print("card1")
                 Cards[0]=1
                 Card1=False
             elif Card2:
+                print("card2")
                 Cards[1]=1
                 Card2=False
-                print("card2")
-
+                print(Cards)
+                
+            
         if xm >256 and xm<337 and ym>14 and ym<100:
         
-            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+           
         #collide function
-            if collide and Card1:
+            if  Card1:
                 Cards[0]=2
                 Card1=False
-            elif collide and Card2:
+            elif Card2:
                 Cards[1]=2
                 Card2=False
 
@@ -336,7 +334,8 @@ while True:
                 Cards[1]=19
                 Card2=False
         print(Cards[0],Cards[1])
-
+        xm=0
+        ym=0
         y=10
         for j in range (ROWS):
             x=10
@@ -350,6 +349,6 @@ while True:
 
     #keep going with every other card
 
-
+pygame.quit()
 
 

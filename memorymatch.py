@@ -115,26 +115,28 @@ while True:
             ym=mouse_pos[1]
 
         if xm >14 and xm<100 and ym>14 and ym<100:
-        
+            print(Card1)
             collide = pygame.Rect.collidepoint(rect,(xm,ym))
         #collide function
-            if collide and Card1:
+            if Card1:
                 Cards[0]=0
                 Card1=False
-            elif collide and Card2:
+            elif Card2:
                 Cards[1]=0
                 Card2=False
 
         if xm >135 and xm<220 and ym>14 and ym<100:
-        
+            print(xm,ym)
             collide = pygame.Rect.collidepoint(rect,(xm,ym))
         #collide function
-            if collide and Card1:
+            if Card1:
+                print("card1")
                 Cards[0]=1
                 Card1=False
-            elif collide and Card2:
+            elif Card2:
                 Cards[1]=1
                 Card2=False
+                print("card2")
 
         if xm >256 and xm<337 and ym>14 and ym<100:
         
@@ -160,180 +162,180 @@ while True:
 
         if xm >499 and xm<583 and ym>14 and ym<100:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=4
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=4
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=4
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=4
+                Card2=False
 
         if xm >17 and xm<101 and ym>136 and ym<220:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=5
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=5
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+    #collide function
+            if collide and Card1:
+                Cards[0]=5
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=5
+                Card2=False
 
         if xm >138 and xm<219 and ym>136 and ym<220:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=6
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=6
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=6
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=6
+                Card2=False
 
         if xm >257 and xm<343 and ym>136 and ym<220:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=7
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=7
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=7
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=7
+                Card2=False
 
         if xm >375 and xm<436 and ym>136 and ym<220:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=8
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=8
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=8
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=8
+                Card2=False
         
         if xm >496 and xm<582 and ym>136 and ym<220:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=9
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=9
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=9
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=9
+                Card2=False
 
         if xm >14 and xm<103 and ym>256 and ym<342:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=10
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=10
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=10
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=10
+                Card2=False
 
         if xm >139 and xm<221 and ym>256 and ym<342:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=11
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=11
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=11
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=11
+                Card2=False
 
         if xm >256 and xm<345 and ym>256 and ym<342:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=12
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=12
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=12
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=12
+                Card2=False
 
         if xm >375 and xm<460 and ym>256 and ym<342:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=13
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=13
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=13
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=13
+                Card2=False
 
         if xm >495 and xm<584 and ym>256 and ym<342:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=14
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=14
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=14
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=14
+                Card2=False
 
         if xm >14 and xm<102 and ym>374 and ym<463:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=15
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=15
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=15
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=15
+                Card2=False
 
         if xm >134 and xm<221 and ym>374 and ym<463:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=16
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=16
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=16
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=16
+                Card2=False
         
         if xm >258 and xm<373 and ym>374 and ym<463:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=17
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=17
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=17
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=17
+                Card2=False
 
         if xm >377 and xm<460 and ym>374 and ym<463:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=18
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=18
-                    Card2=False
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=18
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=18
+                Card2=False
 
         if xm >498 and xm<581 and ym>374 and ym<463:
             
-                collide = pygame.Rect.collidepoint(rect,(xm,ym))
-            #collide function
-                if collide and Card1:
-                    Cards[0]=19
-                    Card1=False
-                elif collide and Card2:
-                    Cards[1]=19
-                    Card2=False
-
+            collide = pygame.Rect.collidepoint(rect,(xm,ym))
+        #collide function
+            if collide and Card1:
+                Cards[0]=19
+                Card1=False
+            elif collide and Card2:
+                Cards[1]=19
+                Card2=False
+        print(Cards[0],Cards[1])
 
         y=10
         for j in range (ROWS):

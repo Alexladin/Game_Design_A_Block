@@ -37,19 +37,17 @@ def displaySub(subTitle,ysub):
     py.time.delay(10)
 
 def display_back():
-                x=660
-                y=730
-                square.x=x
-                square.y=y
-                for i in range(0,len(bmessages)):
-                    word= bmessages[i]
-                    py.draw.rect(win, PURPLE, square)
-                    text=SUBTITLE_FONT.render(word,10, BLACK)
-                    win.blit(text, (x+wbox+10, y))
-                    py.display.flip()
-                    
-                    
-                    square.y=y
+    x=660
+    y=730
+    square.x=x
+    square.y=y
+    for i in range(0,len(bmessages)):
+        word= bmessages[i]
+        py.draw.rect(win, PURPLE, square)
+        text=SUBTITLE_FONT.render(word,10, BLACK)
+        win.blit(text, (x+wbox+10, y))
+        py.display.flip()
+        square.y=y
 
 counter=1
 def display_Menu():
@@ -68,6 +66,23 @@ def display_Menu():
         y += 100
         square.y=y
         py.display.set_caption("Menu Window")
+
+#def level1_Game():
+    #bg=py.image.load("Images\\gen_wordsearch001.jpg")
+    #win.blit(bg, (0,0))  
+    #py.display.flip() 
+#run=True 
+#while run:
+    #for event in py.event.get():
+        #if event.type == py.QUIT:
+            #run = False
+#bg=py.image.load("Images\\good_wordsearch001.jpg")
+#win.blit(bg, (0,0))  
+
+
+
+
+
 
 win.fill(WHITE)
 display_message('Menu')
@@ -95,20 +110,8 @@ while run:
                 py.display.set_caption("Setting Window")
                 mouse_pos=py.mouse.get_pos()
                 counter +=2
+                display_Menu()
                 
-                x=70
-                y=190
-                square.x=x
-                square.y=y
-                for i in range(0, len(messages2)):
-                    word= messages2[i]
-                    py.draw.rect(win, PURPLE, square)
-                    text=SUBTITLE_FONT.render(word,10, BLACK)
-                    win.blit(text, (x+wbox+10, y))
-                    py.display.flip()
-                    py.time.delay(100)
-                    y += 100
-                    square.y=y
                 back+=1
                 x=660
                 y=730

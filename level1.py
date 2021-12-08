@@ -32,6 +32,7 @@ cards = [i for i in range(10) for j in range(2)]
 random.shuffle(cards)
 CARD_VAL_GRID = [cards[i*len(cards) // ROWS:(i+1)*len(cards) // ROWS] for i in range(ROWS)]
 CARD_GRID = [[] for i in range(ROWS)]
+#this section draws the grid 
 for i in range(ROWS):
     if i == 0:
         for j in range(COLS):

@@ -18,11 +18,12 @@ pygame.display.set_caption("Memory")
 Images= ["Images\\Pygame-Tutorials-master\Game\\apple .png", "Images\Pygame-Tutorials-master\Game\\apple .png", "Images\Pygame-Tutorials-master\Game\\banana.png", "Images\Pygame-Tutorials-master\Game\\banana.png", "Images\Pygame-Tutorials-master\Game\\cherry.png", "Images\Pygame-Tutorials-master\Game\\cherry.png", "Images\Pygame-Tutorials-master\Game\\grape.png", "Images\Pygame-Tutorials-master\Game\\grape.png", "Images\Pygame-Tutorials-master\Game\\lemon.png", "Images\Pygame-Tutorials-master\Game\\lemon.png", "Images\Pygame-Tutorials-master\Game\\orange.png", "Images\Pygame-Tutorials-master\Game\\orange.png", "Images\Pygame-Tutorials-master\Game\\pear.png", "Images\Pygame-Tutorials-master\Game\\pear.png", "Images\Pygame-Tutorials-master\Game\\pineapple.png", "Images\Pygame-Tutorials-master\Game\\pineapple.png", "Images\Pygame-Tutorials-master\Game\\strawberry.png", "Images\Pygame-Tutorials-master\Game\\strawberry.png", "Images\Pygame-Tutorials-master\Game\\watermelon.png", "Images\Pygame-Tutorials-master\Game\\watermelon.png"]
 Frontcard="Images\Pygame-Tutorials-master\Game\\card front good.png"
 shuffleimages=random.shuffle(Images)
+print(Images)
 #put the double array here? 
 images=len(Images)
 #print(images)
 Cards=[0,0]
-print(Cards)
+
 
 #i think i need to add a list here with all of my new images 
 #i also need to find out where in this code they are putting the numbers 
@@ -60,17 +61,20 @@ screen.fill(GREEN)
 #             screen.blit(Card,(x,y))
 #             x+=120
 #             counter+=1
+            
 #         y+=120
-for i in range(images):
-    y=10
-    for j in range (ROWS):
-        x=10
-        for k in range (COLS):
-            rect=pygame.Rect(x,y , 100, 100 )
-            pygame.draw.rect(screen, BLACK, rect)    
-            x+=120
-            pygame.display.flip()
-        y+=120
+      
+
+# for i in range(images):
+#     y=10
+#     for j in range (ROWS):
+#         x=10
+#         for k in range (COLS):
+#             rect=pygame.Rect(x,y , 100, 100 )
+#             pygame.draw.rect(screen, BLACK, rect)    
+#             x+=120
+#             pygame.display.flip()
+#         y+=120
 
 y=10
 for j in range (ROWS):
@@ -80,9 +84,7 @@ for j in range (ROWS):
         frcard = pygame.transform.scale(frcard, DEFAULT_IMAGE_SIZE)
         screen.blit(frcard,(x,y))
         x+=120
-
     y+=120
-
 pygame.display.flip()
 rect=pygame.Rect(10, 10, 100, 100 )
 pygame.draw.rect(screen, BLACK, rect)
@@ -106,39 +108,34 @@ while run:
                 # print(pygame.mouse.get_pos())
                 xm=mouse_pos[0]
                 ym=mouse_pos[1]
-
-        if xm >14 and xm<100 and ym>14 and ym<100:
+        
+        if xm >14 and xm<100 and ym>14 and ym<100 and 1 not in Cards:
             
         #collide = pygame.Rect.collidepoint(rect,(xm,ym))
         #collide function
             if Card1:
-                print("Card 1")
+                
                 Cards[0]=1
                 Card1=False
-                print(Cards)
+                
             elif Card2:
                 Cards[1]=1
                 Card2=False
             
-        if xm >135 and xm<220 and ym>14 and ym<100:
+        if xm >135 and xm<220 and ym>14 and ym<100 and 2 not in Cards:
             # print("card2")
           
         #collide function
             if Card1:
-                print("card1")
                 Cards[0]=2
                 Card1=False
             elif Card2:
-                print("card2")
+                
                 Cards[1]=2
                 Card2=False
-                print(Cards)
-                
-            
-        if xm >256 and xm<337 and ym>14 and ym<100:
-        
-           
-        #collide function
+
+        if xm >256 and xm<337 and ym>14 and ym<100 and 3 not in Cards:
+  
             if  Card1:
                 Cards[0]=3
                 Card1=False
@@ -146,7 +143,7 @@ while run:
                 Cards[1]=3
                 Card2=False
 
-        if xm >375 and xm<459 and ym>14 and ym<100:
+        if xm >375 and xm<459 and ym>14 and ym<100 and 4 not in Cards:
         
             
         #collide function
@@ -157,7 +154,7 @@ while run:
                 Cards[1]=4
                 Card2=False
 
-        if xm >499 and xm<583 and ym>14 and ym<100:
+        if xm >499 and xm<583 and ym>14 and ym<100 and 5 not in Cards:
             
             
         #collide function
@@ -307,10 +304,7 @@ while run:
             elif Card2:
                 Cards[1]=19
                 Card2=False
-
-        if xm >498 and xm<581 and ym>374 and ym<463:
-            
-            
+        if xm >498 and xm<581 and ym>374 and ym<463:     
         #collide function
             if Card1:
                 Cards[0]=20
@@ -319,19 +313,63 @@ while run:
                 Cards[1]=20
                 Card2=False
 
-        print(Cards[0],Cards[1])
+        
         xm=0
         ym=0
-        y=10
-        for j in range (ROWS):
-            x=10
-            for k in range (COLS):
-                frcard=pygame.image.load(Frontcard)
-                frcard = pygame.transform.scale(frcard, DEFAULT_IMAGE_SIZE)
-                screen.blit(frcard,(x,y))
-                x+=120
-
-            y+=120
+        if Cards[0]==0 and Cards[1]==0:
+            
+            y=10
+            for j in range (ROWS):
+                x=10
+                for k in range (COLS):
+                    frcard=pygame.image.load(Frontcard)
+                    frcard = pygame.transform.scale(frcard, DEFAULT_IMAGE_SIZE)
+                    screen.blit(frcard,(x,y))
+                    x+=120
+                y+=120
+        Flag1=False
+        Flag2=False
+        if Cards[0]!=0 or Cards[1]!=0:
+            
+            y=10
+            counter=0
+            #flips cards
+            for j in range (ROWS):
+                x=10
+                for k in range (COLS):
+                    # print(counter)
+                    if Cards[0]!=0 and Cards[0]-1==counter:
+                        # print("I am Card1 ", counter)
+                        Card=pygame.image.load(Images[counter])
+                        Card = pygame.transform.scale(Card, DEFAULT_IMAGE_SIZE)
+                        screen.blit(Card,(x,y))
+                        Flag1=True
+                    elif Cards[1]!=0 and Cards[1]-1 ==counter:
+                        # print("I am Card2 ", counter)
+                        Card=pygame.image.load(Images[Cards[1]])
+                        Card = pygame.transform.scale(Card, DEFAULT_IMAGE_SIZE)
+                        screen.blit(Card,(x,y))
+                        Flag2=True
+                    else:
+                        frcard=pygame.image.load(Frontcard)
+                        frcard = pygame.transform.scale(frcard, DEFAULT_IMAGE_SIZE)
+                        screen.blit(frcard,(x,y))
+                    x+=120
+                    counter+=1
+                pygame.display.flip()     
+                y+=120
+        
+            if Flag1 and Flag2:
+                print("ending")
+                print(Images)
+                if Images[Cards[0]]==Cards[1]:
+                    
+                    print("They are the same")
+                else:
+                    Cards[0]=0
+                    Cards[1]=0
+                Card1=True
+                Card2=True
 
     #keep going with every other card
 

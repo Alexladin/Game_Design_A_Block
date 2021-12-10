@@ -16,7 +16,10 @@ pygame.display.set_icon(ICON)
 pygame.display.set_caption("Memory")
 #DISPLAY = pygame.display.set_mode(SCREEN)
 Images= ["Images\\Pygame-Tutorials-master\Game\\apple .png", "Images\Pygame-Tutorials-master\Game\\apple .png", "Images\Pygame-Tutorials-master\Game\\banana.png", "Images\Pygame-Tutorials-master\Game\\banana.png", "Images\Pygame-Tutorials-master\Game\\cherry.png", "Images\Pygame-Tutorials-master\Game\\cherry.png", "Images\Pygame-Tutorials-master\Game\\grape.png", "Images\Pygame-Tutorials-master\Game\\grape.png", "Images\Pygame-Tutorials-master\Game\\lemon.png", "Images\Pygame-Tutorials-master\Game\\lemon.png", "Images\Pygame-Tutorials-master\Game\\orange.png", "Images\Pygame-Tutorials-master\Game\\orange.png", "Images\Pygame-Tutorials-master\Game\\pear.png", "Images\Pygame-Tutorials-master\Game\\pear.png", "Images\Pygame-Tutorials-master\Game\\pineapple.png", "Images\Pygame-Tutorials-master\Game\\pineapple.png", "Images\Pygame-Tutorials-master\Game\\strawberry.png", "Images\Pygame-Tutorials-master\Game\\strawberry.png", "Images\Pygame-Tutorials-master\Game\\watermelon.png", "Images\Pygame-Tutorials-master\Game\\watermelon.png"]
+<<<<<<< HEAD
 FoundImages=[False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False ]
+=======
+>>>>>>> cac5919615b99ec031f439ee6efaf8402540cd68
 Frontcard="Images\Pygame-Tutorials-master\Game\\card front good.png"
 shuffleimages=random.shuffle(Images)
 print(Images)
@@ -334,14 +337,22 @@ while run:
             
             y=10
             counter=0
+<<<<<<< HEAD
             #flips cards
+=======
+
+>>>>>>> cac5919615b99ec031f439ee6efaf8402540cd68
             for j in range (ROWS):
                 x=10
                 for k in range (COLS):
                     # print(counter)
                     if Cards[0]!=0 and Cards[0]-1==counter:
                         # print("I am Card1 ", counter)
+<<<<<<< HEAD
                         Card=pygame.image.load(Images[Cards[0]])
+=======
+                        Card=pygame.image.load(Images[counter])
+>>>>>>> cac5919615b99ec031f439ee6efaf8402540cd68
                         Card = pygame.transform.scale(Card, DEFAULT_IMAGE_SIZE)
                         screen.blit(Card,(x,y))
                         Flag1=True
@@ -351,11 +362,14 @@ while run:
                         Card = pygame.transform.scale(Card, DEFAULT_IMAGE_SIZE)
                         screen.blit(Card,(x,y))
                         Flag2=True
+<<<<<<< HEAD
                     elif FoundImages[counter]:
                         print(counter)
                         Card=pygame.image.load(Images[counter])
                         Card = pygame.transform.scale(Card, DEFAULT_IMAGE_SIZE)
                         screen.blit(Card,(x,y))
+=======
+>>>>>>> cac5919615b99ec031f439ee6efaf8402540cd68
                     else:
                         frcard=pygame.image.load(Frontcard)
                         frcard = pygame.transform.scale(frcard, DEFAULT_IMAGE_SIZE)
@@ -367,18 +381,25 @@ while run:
         
             if Flag1 and Flag2:
                 print("ending")
+<<<<<<< HEAD
                 print([Cards[0]])
                 print([Cards[1]])
                 if Images[Cards[0]]==Images[Cards[1]]:
                     FoundImages[Cards[0]]=True
                     FoundImages[Cards[1]]=True
 
+=======
+                print(Images)
+                if Images[Cards[0]]==Cards[1]:
+                    
+>>>>>>> cac5919615b99ec031f439ee6efaf8402540cd68
                     print("They are the same")
                 else:
                     Cards[0]=0
                     Cards[1]=0
                 Card1=True
                 Card2=True
+<<<<<<< HEAD
             keys = pygame.key.get_pressed()
             
             
@@ -387,6 +408,8 @@ while run:
             if keys[pygame.K_SPACE]:
                 pygame.quit()
 
+=======
+>>>>>>> cac5919615b99ec031f439ee6efaf8402540cd68
 
     #keep going with every other card
 
@@ -397,8 +420,11 @@ pygame.quit()
 
 
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> cac5919615b99ec031f439ee6efaf8402540cd68

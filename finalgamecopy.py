@@ -5,7 +5,8 @@ import random , pygame, os, array
 #this is the good version of my code 
 #https://github.com/mathmaniac88/memory-pygame
 #I actually used absolutely nothing from that game but im still listing it 
-
+#Journal link
+#https://docs.google.com/document/d/1sp3St5cbWvBrcGPOxt_H0CvsDBAPSnJKEW7EapeUkQM/edit#
 
 #Load modules and initialize display
 import os, random, time, pygame

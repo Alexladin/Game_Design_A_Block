@@ -2,11 +2,13 @@ import random , pygame, os, array
 
 #Alex Ladin 
 #11/18/2021
-#this is the good version of my code 
+#this is my version of the code that i can break 
 #https://github.com/mathmaniac88/memory-pygame
 #I actually used absolutely nothing from that game but im still listing it 
 #Journal link
 #https://docs.google.com/document/d/1sp3St5cbWvBrcGPOxt_H0CvsDBAPSnJKEW7EapeUkQM/edit#
+
+
 
 #Load modules and initialize display
 import os, random, time, pygame
@@ -316,19 +318,26 @@ while run:
                 Cards[1]=20
                 Card2=False
 
+        if FoundImages[Cards[0]-1] or FoundImages[Cards[1]-1]:
+            Cards[0] =0
+            Cards[1]=0
+            Card1 = True
+            Card2 = True
         
         xm=0
         ym=0
         if Cards[0]==0 and Cards[1]==0:
-            
+            counter = 0
             y=10
             for j in range (ROWS):
                 x=10
                 for k in range (COLS):
-                    frcard=pygame.image.load(Frontcard)
-                    frcard = pygame.transform.scale(frcard, DEFAULT_IMAGE_SIZE)
-                    screen.blit(frcard,(x,y))
+                    if not FoundImages[counter]:
+                        frcard=pygame.image.load(Frontcard)
+                        frcard = pygame.transform.scale(frcard, DEFAULT_IMAGE_SIZE)
+                        screen.blit(frcard,(x,y))
                     x+=120
+                    counter = counter +1
                 y+=120
         Flag1=False
         Flag2=False
@@ -341,8 +350,10 @@ while run:
             for j in range (ROWS):
                 x=10
                 for k in range (COLS):
-                    # print(counter)
-                    if Cards[0]!=0 and Cards[0]-1==counter:
+                    print(counter)
+                    if FoundImages[counter]:
+                        print ("Has been found")
+                    elif Cards[0]!=0 and Cards[0]-1==counter:
                     
                         # print("I am Card1 ", counter)
                         Card=pygame.image.load(Images[Cards[0]-1])
@@ -374,8 +385,8 @@ while run:
                 print(Images[Cards[1]-1])
                 if Images[Cards[0]-1]==Images[Cards[1]-1]:
                     
-                    FoundImages[Cards[0]]=True
-                    FoundImages[Cards[1]]=True
+                    FoundImages[Cards[0]-1]=True
+                    FoundImages[Cards[1]-1]=True
                     print(FoundImages)
                     
                 

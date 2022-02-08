@@ -2,6 +2,8 @@
 #11/18/2021
 #this is my version of the code that i can break 
 #https://github.com/mathmaniac88/memory-pygame
+#Journal link
+#https://docs.google.com/document/d/1sp3St5cbWvBrcGPOxt_H0CvsDBAPSnJKEW7EapeUkQM/edit#
 
 
 #Load modules and initialize display
